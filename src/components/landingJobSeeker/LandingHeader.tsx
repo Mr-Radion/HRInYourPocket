@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from '../../static/landing/header/logo.svg';
+import logo from '../../static/landingJobSeeker/header/logo.svg';
 
 function LandingHeader() {
   return (
