@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import logo from '../../static/landingJobSeeker/header/logo.svg';
 
 function LandingHeader() {
@@ -13,13 +13,12 @@ function LandingHeader() {
           className="App-link"
           href="https://reactjs.org"
           target="_blank"
-          rel="noopener noreferrer"
-        >
+          rel="noopener noreferrer">
           Learn React
         </a>
       </header>
     </div>
-  )
+  );
 }
 
-export default LandingHeader
+export default LandingHeader;
