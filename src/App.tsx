@@ -1,12 +1,12 @@
 import React from 'react';
-import Header from './components/landingJobSeeker/LandingHeader';
+import LandingJobSeeker from './pages/landingJobSeeker';
 
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-    <Header />
+      <LandingJobSeeker />
     </div>
   );
 }
