@@ -1,4 +1,5 @@
 @import 'landingSeeker/style';
+@import './genereal/style';
 @import 'fonts';
 
 body {
@@ -8,6 +9,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  padding: 50px 0;
 }
 
+button {
+  cursor: pointer;
+}
