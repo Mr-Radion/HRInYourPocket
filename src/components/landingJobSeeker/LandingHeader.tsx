@@ -9,7 +9,7 @@ function LandingHeader() {
   return (
     <header className="landing-header">
       <div className="landingHeader-shape"> 
-        <span className="landingHeader-logo" />
+        <span className="logo" />
         <LandingNav />
       </div>
       <div className="landingHeader-content">

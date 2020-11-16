@@ -9,6 +9,7 @@ function LandingNav() {
       behavior: 'smooth',
     });
   };
+  
   return (
     <nav className="landingHeader-nav">
       <button className="btn btn-danger header-btn" onClick={toForm}>
