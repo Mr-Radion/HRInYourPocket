@@ -1,15 +1,13 @@
 import React from 'react'
-import Header from '../../components/landingJobSeeker/LandingHeader';
-import FormFeedback from '../../components/landingJobSeeker/FormFeedback';
-import LandingNav from '../../components/landingJobSeeker/LandingNav';
+import LandingHeader from '../../components/landingJobSeeker/LandingHeader';
+import LandinFormFeedback from '../../components/landingJobSeeker/FormFeedback';
 import LandingFooter from '../../components/landingJobSeeker/LandingFooter';
 
 function index() {
   return (
     <>
-      <LandingNav />
-      <Header />
-      <FormFeedback />
+      <LandingHeader />
+      <LandinFormFeedback />
       <LandingFooter />
     </>
   )

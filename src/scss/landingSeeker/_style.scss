@@ -1,3 +1,73 @@
-header {
-  border: 1px solid #fff;
+.landing-header {
+  background: url('../../static/landingJobSeeker/header/header-phone.svg') no-repeat;
+  background-position: right top;
+  background-size: contain;
+  height: 90vh;
+  padding: 5vh 8vh;
+}
+
+.landingHeader-shape {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.landingHeader-content-txt {
+  margin-top: 115px;
+  >h1 {
+    text-align: left;
+  }
+  >span {
+    display: block;
+    width: 680px;
+    font-style: normal;
+    text-align: left;
+    font-size: 24px;
+  }
+}
+
+.landingItem__form {
+  @extend %fontMontserrat;
+  font-size: 16px;
+  line-height: 32px;
+  letter-spacing: 0.2px;
+  margin-bottom: 32px;
+  height: 60px;
+  border: none;
+  box-shadow:#A0A0A0 0 0 0 1px; //#A0A0A0
+  &:focus {
+    outline: none;
+  }
+  &::placeholder {
+    letter-spacing: -0.3px;
+  }
+}
+
+.landingContainer__form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 32px;
+  border: none;
+  width: max-content;
+  >div {
+    input:nth-child(1) {
+      border-radius: 10px 0 0 10px;
+      padding: 0 59px;
+      &::placeholder {
+        text-align: center;
+      }
+    }
+    input:nth-child(2) {
+      border-radius: 0 10px 10px 0;
+      padding: 0 30px 0 88px;
+      &::placeholder {
+        text-align: left!important;
+      }
+    }
+  }
+}
+
+.content--yellow {
+  color: #FCE55A;
 }
