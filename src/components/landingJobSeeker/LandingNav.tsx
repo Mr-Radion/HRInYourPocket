@@ -9,13 +9,13 @@ function LandingNav() {
       behavior: 'smooth',
     });
   };
-  
+
   return (
     <nav className="landingHeader-nav">
-      <button className="btn btn-danger header-btn" onClick={toForm}>
+      <button className="application-btn mr--21" onClick={toForm}>
         Оставить заявку
       </button>
-      <button className="btn btn-danger header-btn">
+      <button className="login-btn">
         Войти
       </button>
     </nav>

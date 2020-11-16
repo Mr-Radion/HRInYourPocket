@@ -2,3 +2,22 @@
   font-family: 'Montserrat';
   font-style: normal;
 }
+
+%font-btn-basic {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+%button-basic {
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  &:focus {
+    outline: none;
+  }
+  &:active {
+    outline: none;
+  }
+}

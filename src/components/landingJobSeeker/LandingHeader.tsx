@@ -8,7 +8,7 @@ function LandingHeader() {
 
   return (
     <header className="landing-header">
-      <div className="landingHeader-shape"> 
+      <div className="landingHeader-shape">
         <span className="logo" />
         <LandingNav />
       </div>
@@ -19,8 +19,9 @@ function LandingHeader() {
             мечты
           </h1>
           <span>
-            HR в кармане - это веб-платформа, которая<br /> позволяет соискателю создавать задания на
-            поиск работы с оплатой за приглашения. Вам останется лишь ходить на интервью.
+            <span className="content--yellow">HR в кармане</span> - это веб-платформа, которая
+            <br /> позволяет соискателю создавать задания на поиск работы с оплатой за приглашения.
+            Вам останется лишь ходить на интервью.
           </span>
           <fieldset className="landingContainer__form">
             <div>
@@ -39,10 +40,10 @@ function LandingHeader() {
                 required
               />
             </div>
+            <button className="createTask-btn btn--yellow" onClick={toForm}>
+              Создать задание
+            </button>
           </fieldset>
-          <button className="btn btn-danger header-btn" onClick={toForm}>
-            Создать задание
-          </button>
         </div>
       </div>
     </header>

@@ -2,8 +2,8 @@
   background: url('../../static/landingJobSeeker/header/header-phone.svg') no-repeat;
   background-position: right top;
   background-size: contain;
-  height: 93vh;
-  padding: 3.5vh;
+  height: 90vh;
+  padding: 5vh 8vh;
 }
 
 .landingHeader-shape {
@@ -14,6 +14,7 @@
 }
 
 .landingHeader-content-txt {
+  margin-top: 115px;
   >h1 {
     text-align: left;
   }
@@ -31,6 +32,7 @@
   font-size: 16px;
   line-height: 32px;
   letter-spacing: 0.2px;
+  margin-bottom: 32px;
   height: 60px;
   border: none;
   box-shadow:#A0A0A0 0 0 0 1px; //#A0A0A0
@@ -43,6 +45,9 @@
 }
 
 .landingContainer__form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 32px;
   border: none;
   width: max-content;
   >div {
@@ -61,4 +66,8 @@
       }
     }
   }
+}
+
+.content--yellow {
+  color: #FCE55A;
 }
