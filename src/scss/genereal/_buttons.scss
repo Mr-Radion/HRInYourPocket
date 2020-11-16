@@ -21,10 +21,22 @@
   @extend %button-basic;
 }
 
+.send-btn {
+  width: 300px;
+  height: 70px;  
+  @extend %font-btn-basic;
+  @extend %button-basic;
+  border-radius: 12px!important;
+}
+
 .btn--yellow {
   background-color: #FCE55A;
 }
 
 .mr--21 {
   margin-right: 21px;
+}
+
+.mt--32 {
+  margin-top: 32px;
 }

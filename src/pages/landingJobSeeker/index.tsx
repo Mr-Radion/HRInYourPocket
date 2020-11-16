@@ -5,11 +5,11 @@ import LandingFooter from '../../components/landingJobSeeker/LandingFooter';
 
 function index() {
   return (
-    <>
+    <div className="landing-container">
       <LandingHeader />
       <LandinFormFeedback />
       <LandingFooter />
-    </>
+    </div>
   )
 }
 
