@@ -7,7 +7,7 @@ function LandingHeader() {
   };
 
   return (
-    <div className="landing-header">
+    <header className="landing-header">
       <div className="landingHeader-shape"> 
         <span className="landingHeader-logo" />
         <LandingNav />
@@ -19,7 +19,7 @@ function LandingHeader() {
             мечты
           </h1>
           <span>
-            HR в кармане - это веб-платформа, которая позволяет соискателю создавать задания на
+            HR в кармане - это веб-платформа, которая<br /> позволяет соискателю создавать задания на
             поиск работы с оплатой за приглашения. Вам останется лишь ходить на интервью.
           </span>
           <fieldset className="landingContainer__form">
@@ -45,7 +45,7 @@ function LandingHeader() {
           </button>
         </div>
       </div>
-    </div>
+    </header>
   );
 }
 

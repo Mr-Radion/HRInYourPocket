@@ -10,14 +10,14 @@ function LandingNav() {
     });
   };
   return (
-    <div>
+    <nav className="landingHeader-nav">
       <button className="btn btn-danger header-btn" onClick={toForm}>
         Оставить заявку
       </button>
       <button className="btn btn-danger header-btn">
         Войти
       </button>
-    </div>
+    </nav>
   );
 }
 
