@@ -27,8 +27,7 @@
 }
 
 .landingItem__form {
-  font-family: 'Montserrat';
-  font-style: normal;
+  @extend %fontMontserrat;
   font-size: 16px;
   line-height: 32px;
   letter-spacing: 0.2px;
