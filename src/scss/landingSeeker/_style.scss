@@ -1,9 +1,14 @@
+// .landing-container {
+//   margin: 5vh 8vh;
+// }
+
 .landing-header {
   background: url('../../static/landingJobSeeker/header/header-phone.svg') no-repeat;
   background-position: right top;
   background-size: contain;
   height: 90vh;
-  padding: 5vh 8vh;
+  padding-top: 5vh;
+  @extend %landingContainer-aside;
 }
 
 .landingHeader-shape {
@@ -15,10 +20,10 @@
 
 .landingHeader-content-txt {
   margin-top: 115px;
-  >h1 {
+  > h1 {
     text-align: left;
   }
-  >span {
+  > span {
     display: block;
     width: 680px;
     font-style: normal;
@@ -35,12 +40,13 @@
   margin-bottom: 32px;
   height: 60px;
   border: none;
-  box-shadow:#A0A0A0 0 0 0 1px; //#A0A0A0
+  box-shadow: #a0a0a0 0 0 0 1px;
   &:focus {
     outline: none;
   }
   &::placeholder {
     letter-spacing: -0.3px;
+    color: #a0a0a0;
   }
 }
 
@@ -50,7 +56,7 @@
   margin-top: 32px;
   border: none;
   width: max-content;
-  >div {
+  > div {
     input:nth-child(1) {
       border-radius: 10px 0 0 10px;
       padding: 0 59px;
@@ -62,12 +68,56 @@
       border-radius: 0 10px 10px 0;
       padding: 0 30px 0 88px;
       &::placeholder {
-        text-align: left!important;
+        text-align: left !important;
       }
     }
   }
 }
 
 .content--yellow {
-  color: #FCE55A;
+  color: #fce55a;
+}
+
+// FeedbackWrapper
+
+.feedbackWrapper {
+  @extend %landingContainer-aside;
+  padding-bottom: 85px;
+}
+
+.formFeedback {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.formFeedback-title {
+  @extend %fontMontserrat;
+  font-size: 48px;
+  line-height: 59px;
+  margin-bottom: 84px;
+}
+
+.formFeedback-item {
+  @extend %input-basic;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0.2px;
+  height: 70px;
+  width: 800px;
+  padding-left: 43px;
+  box-sizing: border-box;
+  margin-top: 32px;
+  &::placeholder {
+    color: #bfc6c8;
+  }
+  &:nth-child(2) {
+    margin-top: 0!important;
+  }
+}
+
+.textarrea-item {
+  height: 150px !important;
+  padding-top: 24px !important;
 }

@@ -21,3 +21,22 @@
     outline: none;
   }
 }
+
+%input-basic {
+  @extend %fontMontserrat;
+  letter-spacing: 0.2px;
+  border-radius: 21px;
+  border: none;
+  box-shadow: #BFC6C8 0 0 0 1px; 
+  &:focus {
+    outline: none;
+  }
+  &::placeholder {
+    letter-spacing: -0.3px;
+  }
+}
+
+%landingContainer-aside {
+  padding-left: 8vh;
+  padding-right: 8vh;
+}
