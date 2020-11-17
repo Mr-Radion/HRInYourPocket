@@ -40,3 +40,9 @@
   padding-left: 8vh;
   padding-right: 8vh;
 }
+
+%landing-title {
+  @extend %fontMontserrat;
+  font-size: 48px;
+  line-height: 59px;
+}

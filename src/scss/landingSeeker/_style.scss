@@ -21,7 +21,10 @@
 .landingHeader-content-txt {
   margin-top: 115px;
   > h1 {
+    @extend %fontMontserrat;
     text-align: left;
+    font-weight: 600;
+    font-size: 64px;
   }
   > span {
     display: block;
@@ -93,9 +96,7 @@
 }
 
 .formFeedback-title {
-  @extend %fontMontserrat;
-  font-size: 48px;
-  line-height: 59px;
+  @extend %landing-title;
   margin-bottom: 84px;
 }
 
@@ -156,5 +157,30 @@
     font-size: 16px;
     line-height: 19px;
     color: #fff;
+  }
+}
+
+// LandingHowItWorksWrapper
+
+.landingHowItWorksWrapper {
+  @extend %landingContainer-aside;
+  padding-bottom: 95px;
+  padding-top: 100px;
+}
+
+.landingHowItWorksWrapper-title {
+  @extend %landing-title;
+}
+
+.landingHowItWorksWrapper-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 84px;
+}
+
+.landingHowItWorksWrapper-listItem {
+  &:nth-child(2n+1) {
+    width: 260px;
   }
 }
