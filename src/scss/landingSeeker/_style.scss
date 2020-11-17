@@ -16,6 +16,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  // flex-wrap: wrap;
 }
 
 .landingHeader-content-txt {
@@ -81,6 +82,50 @@
   color: #fce55a;
 }
 
+// LandingHowItWorksWrapper
+
+.landingHowItWorksWrapper {
+  @extend %landingContainer-aside;
+  padding-bottom: 95px;
+  padding-top: 100px;
+}
+
+.landingHowItWorksWrapper-title {
+  @extend %landing-title;
+}
+
+.landingHowItWorksWrapper-list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  margin-top: 84px;
+}
+
+.landingHowItWorksWrapper-listItem {
+  &:nth-child(2n + 1) {
+    width: 260px;
+  }
+  &:nth-child(2n) {
+    height: 227px;
+    align-self: center !important;
+  }
+}
+
+.landingListItem-textBlock__title {
+  @extend %fontMontserrat;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+}
+
+.landingListItem-textBlock__content {
+  @extend %fontMontserrat;
+  font-size: 18px;
+  line-height: 22px;
+  color: #353031;
+}
+
 // FeedbackWrapper
 
 .feedbackWrapper {
@@ -138,7 +183,7 @@
 }
 
 .landingFooter-navList {
-  >li {
+  > li {
     display: flex;
     flex-flow: column wrap;
   }
@@ -157,30 +202,5 @@
     font-size: 16px;
     line-height: 19px;
     color: #fff;
-  }
-}
-
-// LandingHowItWorksWrapper
-
-.landingHowItWorksWrapper {
-  @extend %landingContainer-aside;
-  padding-bottom: 95px;
-  padding-top: 100px;
-}
-
-.landingHowItWorksWrapper-title {
-  @extend %landing-title;
-}
-
-.landingHowItWorksWrapper-list {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 84px;
-}
-
-.landingHowItWorksWrapper-listItem {
-  &:nth-child(2n+1) {
-    width: 260px;
   }
 }
