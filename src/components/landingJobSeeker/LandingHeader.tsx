@@ -19,12 +19,16 @@ function LandingHeader() {
             мечты
           </h1>
           <span>
-            <span className="content--yellow">HR в кармане</span> - это веб-платформа, которая
-            <br /> позволяет соискателю создавать задания на поиск работы с оплатой за приглашения.
-            Вам останется лишь ходить на интервью.
+            <span
+            // className="content--yellow"
+            >
+              HR в кармане
+            </span>{' '}
+            - это веб-платформа, которая позволяет соискателю создавать задания на поиск работы с
+            оплатой за приглашения. Вам останется лишь ходить на интервью.
           </span>
           <fieldset className="landingContainer__form">
-            <div>
+            <div className="landingItem-wrapper">
               <input
                 className="landingItem__form"
                 name="vocation"
