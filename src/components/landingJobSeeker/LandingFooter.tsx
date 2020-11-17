@@ -8,29 +8,29 @@ function LandingFooter() {
         <div className="landingFooter-navWrapper">
           <ul className="landingFooter-navList">
             <li>
-              <li className="landingFooter-navList__item">
+              <div className="landingFooter-navList__item">
                 <a href="/">Готовое резюме</a>
-              </li>
-              <li className="landingFooter-navList__item">
+              </div>
+              <div className="landingFooter-navList__item">
                 <a href="/">Написание сопроводительных писем</a>
-              </li>
-              <li className="landingFooter-navList__item">
+              </div>
+              <div className="landingFooter-navList__item">
                 <a href="/">Перевод резюме</a>
-              </li>
+              </div>
             </li>
             <li>
-              <li className="landingFooter-navList__item">
+              <div className="landingFooter-navList__item">
                 <a href="/">О сервисе</a>
-              </li>
-              <li className="landingFooter-navList__item">
+              </div>
+              <div className="landingFooter-navList__item">
                 <a href="/">Как это работает</a>
-              </li>
-              <li className="landingFooter-navList__item">
+              </div>
+              <div className="landingFooter-navList__item">
                 <a href="/">Тарифы</a>
-              </li>
-              <li className="landingFooter-navList__item">
+              </div>
+              <div className="landingFooter-navList__item">
                 <a href="/">Связаться с нами</a>
-              </li>
+              </div>
             </li>
           </ul>
         </div>
