@@ -2,11 +2,14 @@
 //   margin: 5vh 8vh;
 // }
 
+// Header
+
 .landing-header {
   background: url('../../static/landingJobSeeker/header/header-phone.svg') no-repeat;
   background-position: right top;
   background-size: contain;
   height: 90vh;
+  // height: fit-content;
   padding-top: 5vh;
   @extend %landingContainer-aside;
 }
@@ -82,6 +85,12 @@
   color: #fce55a;
 }
 
+@media (max-height: 825px) {
+  .landing-header {
+    height: fit-content;
+  }
+}
+
 // LandingHowItWorksWrapper
 
 .landingHowItWorksWrapper {
@@ -124,6 +133,35 @@
   font-size: 18px;
   line-height: 22px;
   color: #353031;
+}
+
+// TariffsWrapper
+
+.landingTariffsWrapper {
+  @extend %landingContainer-aside;
+  padding-bottom: 100px;
+}
+
+.landingTariffs__title {
+  @extend %landing-title;
+}
+
+.landingTariffs-invitations {
+  margin-top: 84px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.landingTariffs-invitations__item {
+  display: flex;
+  flex-direction: column;
+  // justify-content: flex-end;
+  padding-top: 55px;
+  background: #ffffff;
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  width: 308.39px;
 }
 
 // FeedbackWrapper

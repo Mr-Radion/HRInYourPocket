@@ -5,7 +5,7 @@ function LandingNav() {
     e.preventDefault();
     window.scrollTo({
       left: 0,
-      top: 6000,
+      top: 1700,
       behavior: 'smooth',
     });
   };
