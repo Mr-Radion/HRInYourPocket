@@ -159,6 +159,41 @@
   width: 308.39px;
 }
 
+.invitationsService__name {
+  @extend %fontMontserrat;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 44px;
+  color: #fce55a;
+}
+
+.invitations__motivationToBuy {
+  @extend %fontMontserrat;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  color: #353031;
+  margin-top: 37px;
+}
+
+.invitationsService__number {
+  @extend %fontMontserrat;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+  color: #000000;
+  margin-top: 32px;
+}
+
+.invitationsService__prace {
+  @extend %fontMontserrat;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 44px;
+  color: #353031;
+  margin-top: 92px;
+}
+
 .landingTariffs-additional {
   margin-top: 88px;
   .landingTariffs-additional__item:nth-child(n + 2) {
