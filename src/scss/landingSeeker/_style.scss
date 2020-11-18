@@ -2,11 +2,14 @@
 //   margin: 5vh 8vh;
 // }
 
+// Header
+
 .landing-header {
   background: url('../../static/landingJobSeeker/header/header-phone.svg') no-repeat;
   background-position: right top;
   background-size: contain;
   height: 90vh;
+  // height: fit-content;
   padding-top: 5vh;
   @extend %landingContainer-aside;
 }
@@ -29,7 +32,7 @@
   }
   > span {
     display: block;
-    width: 680px;
+    max-width: 680px;
     font-style: normal;
     text-align: left;
     font-size: 24px;
@@ -126,6 +129,74 @@
   color: #353031;
 }
 
+// TariffsWrapper
+
+.landingTariffsWrapper {
+  @extend %landingContainer-aside;
+  padding-bottom: 100px;
+}
+
+.landingTariffs__title {
+  @extend %landing-title;
+}
+
+.landingTariffs-invitations {
+  margin-top: 49px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.landingTariffs-invitations__item {
+  display: flex;
+  flex-direction: column;
+  margin-top: 35px;
+  justify-content: space-between;
+  padding-top: 55px;
+  background: #ffffff;
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  width: 308.39px;
+}
+
+.landingTariffs-additional {
+  margin-top: 88px;
+  .landingTariffs-additional__item:nth-child(n + 2) {
+    margin-top: 42px;
+  }
+}
+
+.landingTariffs-additional__item {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 44px;
+}
+
+.additionalService__name {
+  height: fit-content;
+  align-self: center;
+  @extend %fontMontserrat;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+}
+
+.additionalWrapper__service-prace {
+  display: flex;
+  flex-direction: row;
+}
+
+.additionalService__prace {
+  height: fit-content;
+  align-self: center;
+  margin-right: 125px;
+  @extend %fontMontserrat;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 37px;
+  color: #353031;
+}
+
 // FeedbackWrapper
 
 .feedbackWrapper {
@@ -176,6 +247,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .landingFooter-navList {
@@ -202,5 +274,53 @@
     font-size: 16px;
     line-height: 19px;
     color: #fff;
+  }
+}
+
+// Adaptive
+
+@media (max-height: 825px) {
+  .landing-header {
+    height: fit-content;
+  }
+}
+
+@media (max-width: 760px) {
+  .landingTariffs-invitations {
+    justify-content: center;
+  }
+  .landingItem-wrapper {
+    display: flex;
+    flex-direction: column;
+    input {
+      border-radius: 10px !important;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .landingTariffs-invitations {
+    justify-content: space-evenly;
+  }
+}
+
+@media (max-width: 1366px) {
+  .landingHeader-content-txt {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    > h1 {
+      text-align: center;
+    }
+    > span {
+      text-align: center;
+    }
+  }
+}
+
+@media (max-width: 910px) {
+  .landing-footer {
+    justify-content: center;
   }
 }
