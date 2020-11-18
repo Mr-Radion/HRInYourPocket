@@ -27,7 +27,7 @@ function landingTariffs() {
           <button className="buy-btn btn--yellow">Купить</button>
         </div>
         <div className="landingTariffs-invitations__item">
-          <div className="invitationsService__name">Профи</div>
+          <div className="tariffInvitations__name">Профи</div>
           <span className="invitations__motivationToBuy">Обеспечьте гарантию трудоустройтсва</span>  
           <span className="invitationsService__number">10 приглашений</span>  
           <span className="invitationsService__prace">10000 руб.</span>  
@@ -35,8 +35,10 @@ function landingTariffs() {
         </div>
       </div>
       <div className="landingTariffs-additional">
-        <div className="landingTariffs-additional">
-
+        <div className="landingTariffs-additional__item">
+          <div className="additionalService__name">Составление резюме</div>
+          <div className="additionalService__prace">2000 руб.</div>
+          <button className="buy-btn btn--yellow">Купить</button>
         </div>
       </div>
       
