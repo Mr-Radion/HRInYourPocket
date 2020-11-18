@@ -6,21 +6,21 @@ function landingTariffs() {
       <h2 className="landingTariffs__title">Тарифы</h2>
       <div className="landingTariffs-invitations">
         <div className="landingTariffs-invitations__item">
-          <div className="invitationsService__name">Базовый</div>
+          <span className="invitationsService__name">Базовый</span>
           <span className="invitations__motivationToBuy">Хороший повод начать</span>
           <span className="invitationsService__number">1 приглашение</span>
           <span className="invitationsService__prace">1500 руб.</span>
           <button className="buy-btn btn--yellow mt--35">Купить</button>
         </div>
         <div className="landingTariffs-invitations__item">
-          <div className="invitationsService__name">Средний</div>
+          <span className="invitationsService__name">Средний</span>
           <span className="invitations__motivationToBuy">Набирайте обороты</span>
           <span className="invitationsService__number">3 приглашения</span>
           <span className="invitationsService__prace">4500 руб.</span>
           <button className="buy-btn btn--yellow mt--35">Купить</button>
         </div>
         <div className="landingTariffs-invitations__item">
-          <div className="invitationsService__name">Эффективный</div>
+          <span className="invitationsService__name">Эффективный</span>
           <span className="invitations__motivationToBuy">
             Выбирайте и сравнивайте разные предложения
           </span>
@@ -29,7 +29,7 @@ function landingTariffs() {
           <button className="buy-btn btn--yellow mt--35">Купить</button>
         </div>
         <div className="landingTariffs-invitations__item">
-          <div className="tariffInvitations__name">Профи</div>
+          <span className="invitationsService__name">Профи</span>
           <span className="invitations__motivationToBuy">Обеспечьте гарантию трудоустройтсва</span>
           <span className="invitationsService__number">10 приглашений</span>
           <span className="invitationsService__prace">10000 руб.</span>
