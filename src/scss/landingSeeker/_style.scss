@@ -274,6 +274,23 @@
   padding-top: 24px !important;
 }
 
+// Landing block create task
+
+.landingBlockCreateTask {
+  background-color: #FCE55A;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  padding-top: 82px;
+  padding-bottom: 82px;
+}
+
+.landingBlockCreateTask__title {
+  @extend %landing-title;
+  margin-bottom: 31px;
+}
+
 // Landing footer
 
 .landing-footer {
