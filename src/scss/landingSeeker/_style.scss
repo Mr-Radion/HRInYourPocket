@@ -159,9 +159,42 @@
   width: 308.39px;
 }
 
+.landingTariffs-additional {
+  margin-top: 88px;
+  .landingTariffs-additional__item:nth-child(n + 2) {
+    margin-top: 42px;
+  }
+}
+
 .landingTariffs-additional__item {
   display: flex;
   justify-content: space-between;
+  padding-left: 44px;
+}
+
+.additionalService__name {
+  height: fit-content;
+  align-self: center;
+  @extend %fontMontserrat;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+}
+
+.additionalWrapper__service-prace {
+  display: flex;
+  flex-direction: row;
+}
+
+.additionalService__prace {
+  height: fit-content;
+  align-self: center;
+  margin-right: 125px;
+  @extend %fontMontserrat;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 37px;
+  color: #353031;
 }
 
 // FeedbackWrapper
@@ -260,7 +293,7 @@
     display: flex;
     flex-direction: column;
     input {
-      border-radius: 10px!important;
+      border-radius: 10px !important;
     }
   }
 }
@@ -277,10 +310,10 @@
     flex-direction: column;
     justify-content: center;
     align-content: center;
-    >h1 {
+    > h1 {
       text-align: center;
     }
-    >span {
+    > span {
       text-align: center;
     }
   }

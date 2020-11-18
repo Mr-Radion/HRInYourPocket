@@ -34,8 +34,7 @@
   height: 70px;
   @extend %font-btn-basic;
   @extend %button-basic;
-  border-radius: 0 0 10px 10px!important;
-  margin-top: 55px;
+  border-radius: 0 0 10px 10px;
 }
 
 .btn--yellow {
@@ -48,4 +47,12 @@
 
 .mt--32 {
   margin-top: 32px;
+}
+
+.mt--35 {
+  margin-top: 55px;
+}
+
+.btn--basicRadius {
+  border-radius: 10px !important;
 }
