@@ -30,7 +30,7 @@
 }
 
 .buy-btn {
-  width: 308.39px;
+  min-width: 308.39px;
   height: 70px;
   @extend %font-btn-basic;
   @extend %button-basic;
@@ -47,18 +47,6 @@
 
 .color--white {
   color: white;
-}
-
-.mr--21 {
-  margin-right: 21px;
-}
-
-.mt--32 {
-  margin-top: 32px;
-}
-
-.mt--35 {
-  margin-top: 55px;
 }
 
 .btn--basicRadius {

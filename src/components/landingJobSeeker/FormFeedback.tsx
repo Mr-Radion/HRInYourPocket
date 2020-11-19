@@ -3,13 +3,29 @@ import React from 'react';
 function FormFeedback() {
   return (
     <div className="feedbackWrapper">
+      <h2 className="formFeedback-title">Связаться с нами</h2>
       <fieldset className="formFeedback">
-        <h2 className="formFeedback-title">Связаться с нами</h2>
-        <input className="formFeedback-item" type="text" placeholder="Имя"/>
-        <input className="formFeedback-item" type="email" placeholder="Адрес электронной почты"/>
-        <input className="formFeedback-item" type="text" placeholder="Номер телефона"/>
-        <textarea className="formFeedback-item textarrea-item" placeholder="Сообщение"/>
-        <button className="send-btn btn--yellow mt--32">Отправить</button>
+        <ul className="formFeedback-outer">
+          <li>
+            <input className="formFeedback-item" type="text" placeholder="Имя" />
+          </li>
+          <li>
+            <input
+              className="formFeedback-item"
+              type="email"
+              placeholder="Адрес электронной почты"
+            />
+          </li>
+          <li>
+            <input className="formFeedback-item" type="text" placeholder="Номер телефона" />
+          </li>
+          <li>
+            <textarea className="formFeedback-item textarrea-item" placeholder="Сообщение" />
+          </li>
+          <li>
+            <button className="send-btn btn--yellow">Отправить</button>
+          </li>
+        </ul>
       </fieldset>
     </div>
   );

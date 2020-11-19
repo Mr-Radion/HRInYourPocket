@@ -19,7 +19,15 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   // flex-wrap: wrap;
+}
+
+.landingHeader-navOuner {
+  display: flex;
+  >li:first-child {
+    margin-right: 21px;
+  }
 }
 
 .landingHeader-content-txt {
@@ -63,6 +71,8 @@
   margin-top: 32px;
   border: none;
   width: max-content;
+  // width: 80%;
+  // max-width: 656px;
   > div {
     input:nth-child(1) {
       border-radius: 10px 0 0 10px;
@@ -115,6 +125,10 @@
   }
 }
 
+.landingListItem-textBlock {
+  text-align: center;
+}
+
 .landingListItem-textBlock__title {
   @extend %fontMontserrat;
   font-weight: 500;
@@ -151,12 +165,16 @@
   display: flex;
   flex-direction: column;
   margin-top: 35px;
+  text-align: center;
   justify-content: space-between;
   padding-top: 55px;
   background: #ffffff;
   box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
   width: 308.39px;
+  >li:last-child {
+    margin-top: 55px;
+  }
 }
 
 .invitationsService__name {
@@ -230,6 +248,10 @@
   font-size: 30px;
   line-height: 37px;
   color: #353031;
+  >span {
+    min-width: max-content;
+    display: block;
+  }
 }
 
 // FeedbackWrapper
@@ -239,11 +261,36 @@
   padding-bottom: 85px;
 }
 
+// .formFeedback {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+// }
+
 .formFeedback {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.formFeedback * {
+  box-sizing: border-box;
+}
+
+.formFeedback-outer {
+  // padding: 0;
+  max-width: 800px;
+  margin: 0 auto;
+  li {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex: 1 1 800px;
+  }
+  >li:last-child {
+    margin-top: 32px;
+  }
 }
 
 .formFeedback-title {
@@ -290,6 +337,9 @@
   @extend %landing-title;
   margin-bottom: 31px;
 }
+.createTaskWrapper-btn {
+  text-align: center;
+}
 
 // Landing footer
 
@@ -331,11 +381,11 @@
 
 // Adaptive
 
-@media (max-height: 825px) {
-  .landing-header {
-    height: fit-content;
-  }
-}
+// @media (max-height: 825px) {
+//   .landing-header {
+//     height: fit-content;
+//   }
+// }
 
 @media (max-width: 760px) {
   .landingTariffs-invitations {
@@ -367,6 +417,20 @@
     }
     > span {
       text-align: center;
+    }
+  }
+  .landing-header {
+    background: url('../../static/landingJobSeeker/header/header-phone-mobile.svg') no-repeat;
+    background-position: right top;
+    background-size: contain;
+    height: fit-content;
+  }
+  .landingContainer__form {
+    align-self: center;
+  }
+  .landingHeader-content-txt {
+    >span {
+      align-self: center;
     }
   }
 }
