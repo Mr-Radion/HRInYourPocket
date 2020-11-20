@@ -9,7 +9,6 @@
   background-position: right top;
   background-size: contain;
   height: 90vh;
-  // height: fit-content;
   padding-top: 5vh;
   @extend %landingContainer-aside;
 }
@@ -20,7 +19,6 @@
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  // flex-wrap: wrap;
 }
 
 .landingHeader-navOuner {
@@ -71,8 +69,6 @@
   margin-top: 32px;
   border: none;
   width: max-content;
-  // width: 80%;
-  // max-width: 656px;
   > div {
     input:nth-child(1) {
       border-radius: 10px 0 0 10px;
@@ -95,7 +91,7 @@
   color: #fce55a;
 }
 
-// LandingHowItWorksWrapper
+// HowItWorksWrapper
 
 .landingHowItWorksWrapper {
   @extend %landingContainer-aside;
@@ -261,32 +257,17 @@
   padding-bottom: 85px;
 }
 
-// .formFeedback {
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   align-items: center;
-// }
-
-.formFeedback {
-  width: 80%;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.formFeedback * {
-  box-sizing: border-box;
-}
-
 .formFeedback-outer {
-  // padding: 0;
   max-width: 800px;
   margin: 0 auto;
   li {
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    flex: 1 1 800px;
+    flex-direction: row;
+    input, textarea {
+      flex-grow: 0;
+      flex-shrink: 1;
+      flex-basis: 100%;
+    }
   }
   >li:last-child {
     margin-top: 32px;
@@ -304,7 +285,6 @@
   line-height: 24px;
   letter-spacing: 0.2px;
   height: 70px;
-  width: 800px;
   padding-left: 43px;
   box-sizing: border-box;
   margin-top: 32px;
@@ -380,12 +360,6 @@
 }
 
 // Adaptive
-
-// @media (max-height: 825px) {
-//   .landing-header {
-//     height: fit-content;
-//   }
-// }
 
 @media (max-width: 760px) {
   .landingTariffs-invitations {
