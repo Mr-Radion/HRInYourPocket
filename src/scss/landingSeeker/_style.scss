@@ -109,6 +109,7 @@
   flex-wrap: wrap;
   align-items: flex-start;
   margin-top: 84px;
+  text-align: center;
 }
 
 .landingHowItWorksWrapper-listItem {
@@ -378,10 +379,26 @@
   }
   .landingHowItWorksWrapper-list {
     justify-content: center;
-    text-align: center;
   }
   .landingHowItWorksWrapper-listItem {
     margin-top: 32px;
+  }
+  .additionalWrapper__service-prace {
+    display: flex;
+    justify-content: center;
+  }
+  .additionalService__prace  {
+    margin-bottom: 30px;
+    margin-right: 0;
+    width: 300px;
+  }
+  .additionalService__name {
+    width: 260px;
+  }
+  .formFeedback-outer {
+    li {
+      justify-content: center;
+    }
   }
 }
 
@@ -393,11 +410,31 @@
     justify-content: space-between;
     flex-direction: column;
   }
+  .landingTariffs-additional__item {
+    padding-left: 0;
+  }
 }
 
 @media (max-width: 1024px) {
   .landingTariffs-invitations {
     justify-content: space-evenly;
+  }
+  .landingTariffs-additional__item {
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 32px;
+    text-align: center;
+  }
+  .additionalWrapper__service-prace {
+    flex-wrap: wrap;
+    justify-self: flex-end;
+    margin-top: 32px;
+  }
+  .landingHowItWorksWrapper-list {
+    margin-top: 40px;
+  }
+  .formFeedback-title {
+    margin-bottom: 40px;
   }
 }
 
@@ -424,6 +461,7 @@
     align-self: center;
   }
   .landingHeader-content-txt {
+    margin-top: 18px;
     >span {
       align-self: center;
     }
