@@ -117,7 +117,8 @@
   }
   &:nth-child(2n) {
     height: 227px;
-    align-self: center !important;
+    align-items: center;
+    display: flex;
   }
 }
 
@@ -372,6 +373,26 @@
       border-radius: 10px !important;
     }
   }
+  .landingContainer__form {
+    align-items: center;
+  }
+  .landingHowItWorksWrapper-list {
+    justify-content: center;
+    text-align: center;
+  }
+  .landingHowItWorksWrapper-listItem {
+    margin-top: 32px;
+  }
+}
+
+@media (max-width: 910px) {
+  .landing-footer {
+    justify-content: center;
+  }
+  .landingHeader-shape {
+    justify-content: space-between;
+    flex-direction: column;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -409,8 +430,14 @@
   }
 }
 
-@media (max-width: 910px) {
-  .landing-footer {
-    justify-content: center;
+@media (max-width: 1500px) {
+  .landingHowItWorksWrapper-listItem {
+    &:nth-child(2n) {
+      height: 227px;
+      align-items: center;
+      display: flex;
+      display: none;
+    }
   }
 }
+
