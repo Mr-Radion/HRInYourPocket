@@ -9,7 +9,6 @@
   background-position: right top;
   background-size: contain;
   height: 90vh;
-  // height: fit-content;
   padding-top: 5vh;
   @extend %landingContainer-aside;
 }
@@ -19,7 +18,14 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  // flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.landingHeader-navOuner {
+  display: flex;
+  >li:first-child {
+    margin-right: 21px;
+  }
 }
 
 .landingHeader-content-txt {
@@ -85,7 +91,7 @@
   color: #fce55a;
 }
 
-// LandingHowItWorksWrapper
+// HowItWorksWrapper
 
 .landingHowItWorksWrapper {
   @extend %landingContainer-aside;
@@ -103,6 +109,7 @@
   flex-wrap: wrap;
   align-items: flex-start;
   margin-top: 84px;
+  text-align: center;
 }
 
 .landingHowItWorksWrapper-listItem {
@@ -111,8 +118,13 @@
   }
   &:nth-child(2n) {
     height: 227px;
-    align-self: center !important;
+    align-items: center;
+    display: flex;
   }
+}
+
+.landingListItem-textBlock {
+  text-align: center;
 }
 
 .landingListItem-textBlock__title {
@@ -151,12 +163,16 @@
   display: flex;
   flex-direction: column;
   margin-top: 35px;
+  text-align: center;
   justify-content: space-between;
   padding-top: 55px;
   background: #ffffff;
   box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
   width: 308.39px;
+  >li:last-child {
+    margin-top: 55px;
+  }
 }
 
 .invitationsService__name {
@@ -230,6 +246,10 @@
   font-size: 30px;
   line-height: 37px;
   color: #353031;
+  >span {
+    min-width: max-content;
+    display: block;
+  }
 }
 
 // FeedbackWrapper
@@ -239,11 +259,21 @@
   padding-bottom: 85px;
 }
 
-.formFeedback {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.formFeedback-outer {
+  max-width: 800px;
+  margin: 0 auto;
+  li {
+    display: flex;
+    flex-direction: row;
+    input, textarea {
+      flex-grow: 0;
+      flex-shrink: 1;
+      flex-basis: 100%;
+    }
+  }
+  >li:last-child {
+    margin-top: 32px;
+  }
 }
 
 .formFeedback-title {
@@ -257,7 +287,6 @@
   line-height: 24px;
   letter-spacing: 0.2px;
   height: 70px;
-  width: 800px;
   padding-left: 43px;
   box-sizing: border-box;
   margin-top: 32px;
@@ -289,6 +318,9 @@
 .landingBlockCreateTask__title {
   @extend %landing-title;
   margin-bottom: 31px;
+}
+.createTaskWrapper-btn {
+  text-align: center;
 }
 
 // Landing footer
@@ -331,12 +363,6 @@
 
 // Adaptive
 
-@media (max-height: 825px) {
-  .landing-header {
-    height: fit-content;
-  }
-}
-
 @media (max-width: 760px) {
   .landingTariffs-invitations {
     justify-content: center;
@@ -348,11 +374,67 @@
       border-radius: 10px !important;
     }
   }
+  .landingContainer__form {
+    align-items: center;
+  }
+  .landingHowItWorksWrapper-list {
+    justify-content: center;
+  }
+  .landingHowItWorksWrapper-listItem {
+    margin-top: 32px;
+  }
+  .additionalWrapper__service-prace {
+    display: flex;
+    justify-content: center;
+  }
+  .additionalService__prace  {
+    margin-bottom: 30px;
+    margin-right: 0;
+    width: 300px;
+  }
+  .additionalService__name {
+    width: 260px;
+  }
+  .formFeedback-outer {
+    li {
+      justify-content: center;
+    }
+  }
+}
+
+@media (max-width: 910px) {
+  .landing-footer {
+    justify-content: center;
+  }
+  .landingHeader-shape {
+    justify-content: space-between;
+    flex-direction: column;
+  }
+  .landingTariffs-additional__item {
+    padding-left: 0;
+  }
 }
 
 @media (max-width: 1024px) {
   .landingTariffs-invitations {
     justify-content: space-evenly;
+  }
+  .landingTariffs-additional__item {
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 32px;
+    text-align: center;
+  }
+  .additionalWrapper__service-prace {
+    flex-wrap: wrap;
+    justify-self: flex-end;
+    margin-top: 32px;
+  }
+  .landingHowItWorksWrapper-list {
+    margin-top: 40px;
+  }
+  .formFeedback-title {
+    margin-bottom: 40px;
   }
 }
 
@@ -369,10 +451,31 @@
       text-align: center;
     }
   }
-}
-
-@media (max-width: 910px) {
-  .landing-footer {
-    justify-content: center;
+  .landing-header {
+    background: url('../../static/landingJobSeeker/header/header-phone-mobile.svg') no-repeat;
+    background-position: right top;
+    background-size: contain;
+    height: fit-content;
+  }
+  .landingContainer__form {
+    align-self: center;
+  }
+  .landingHeader-content-txt {
+    margin-top: 18px;
+    >span {
+      align-self: center;
+    }
   }
 }
+
+@media (max-width: 1500px) {
+  .landingHowItWorksWrapper-listItem {
+    &:nth-child(2n) {
+      height: 227px;
+      align-items: center;
+      display: flex;
+      display: none;
+    }
+  }
+}
+

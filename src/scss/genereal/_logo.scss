@@ -1,4 +1,5 @@
 .logo {
   content: url(../../static/global/logo.svg);
   cursor: pointer;
+  pointer-events: none;
 }
