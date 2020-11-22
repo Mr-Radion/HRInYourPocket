@@ -1,8 +1,14 @@
 import React from 'react';
 
 function FormFeedback() {
+  const refLink = React.useRef<HTMLDivElement | null>(null);
+
+  React.useEffect(() => {
+    console.log(refLink.current?.offsetTop);
+  }, []);
+
   return (
-    <div className="feedbackWrapper">
+    <div ref={refLink} className="feedbackWrapper">
       <h2 className="formFeedback-title">Связаться с нами</h2>
       <fieldset className="formFeedback">
         <ul className="formFeedback-outer">

@@ -23,6 +23,7 @@
 
 .landingHeader-navOuner {
   display: flex;
+  flex-wrap: wrap;
   >li:first-child {
     margin-right: 21px;
   }
@@ -52,8 +53,8 @@
   letter-spacing: 0.2px;
   margin-bottom: 32px;
   height: 60px;
-  border: none;
-  box-shadow: #a0a0a0 0 0 0 1px;
+  border: 1px solid #A0A0A0;
+  // box-shadow: #a0a0a0 0 0 0 1px;
   &:focus {
     outline: none;
   }
@@ -72,6 +73,8 @@
   > div {
     input:nth-child(1) {
       border-radius: 10px 0 0 10px;
+      border-right: none;
+      box-shadow: #a0a0a0 1px 0 0 0px;
       padding: 0 59px;
       &::placeholder {
         text-align: center;
@@ -79,6 +82,8 @@
     }
     input:nth-child(2) {
       border-radius: 0 10px 10px 0;
+      border-left: none;
+      box-shadow: #a0a0a0 -1px 0 0 0px;
       padding: 0 30px 0 88px;
       &::placeholder {
         text-align: left !important;
@@ -165,6 +170,7 @@
   margin-top: 35px;
   text-align: center;
   justify-content: space-between;
+  align-content: center;
   padding-top: 55px;
   background: #ffffff;
   box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.15);
@@ -336,6 +342,7 @@
 
 .landingFooter-navList {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .landingFooter-navList {
@@ -362,6 +369,18 @@
 }
 
 // Adaptive
+
+@media (max-width: 549px) {
+  .landingHeader-navOuner {
+    justify-content: center;
+    >li:last-child {
+      margin-top: 21px;
+    }
+  }
+  // .landing-header {
+  //   background: none;
+  // }
+}
 
 @media (max-width: 760px) {
   .landingTariffs-invitations {

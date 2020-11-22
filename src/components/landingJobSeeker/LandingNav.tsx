@@ -4,7 +4,6 @@ function LandingNav() {
   const toForm = (e: any) => {
     e.preventDefault();
     window.scrollTo({
-      // left: 0,
       top: 2800,
       behavior: 'smooth',
     });
