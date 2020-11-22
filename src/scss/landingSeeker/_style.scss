@@ -377,9 +377,6 @@
       margin-top: 21px;
     }
   }
-  // .landing-header {
-  //   background: none;
-  // }
 }
 
 @media (max-width: 760px) {
@@ -395,6 +392,16 @@
   }
   .landingContainer__form {
     align-items: center;
+    > div {
+      input:nth-child(1) {
+        border-right: 1px solid #A0A0A0;
+        box-shadow: none;
+      }
+      input:nth-child(2) {
+        border-left: 1px solid #A0A0A0;
+        box-shadow: none;
+      }
+    }
   }
   .landingHowItWorksWrapper-list {
     justify-content: center;
