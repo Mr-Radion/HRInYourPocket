@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
 function LandingNav() {
   const toForm = (e: any) => {
@@ -18,7 +19,9 @@ function LandingNav() {
           </button>
         </li>
         <li>
-          <button className="login-btn">Войти</button>
+          <Link to="/home">
+            <button className="login-btn">Войти</button>
+          </Link>
         </li>
       </ul>
     </nav>

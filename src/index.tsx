@@ -3,12 +3,15 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './scss/app.scss';
+import { BrowserRouter } from 'react-router-dom';
 // import * as styles from './scss/app.scss';
 // const styles = require('./scss/app.scss');
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
