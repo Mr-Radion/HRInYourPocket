@@ -9,21 +9,20 @@ type ModalProps = {
 };
 
 const RegistrationModal = ({ modalOpened, onCancel, children }: ModalProps) => {
-  console.log(typeof children);
   return (
     <>
       {modalOpened && (
         <Portal>
           <FormModalWrapper>
-          <div className="modalOverlay">
-            <div className="modalWindow">
-              <div className="modalHeader">
-                <button className="times" onClick={onCancel} />
+            <div className="modalOverlay">
+              <div className="modalWindow">
+                <div className="modalHeader">
+                  <button className="times" onClick={onCancel} />
+                </div>
+                <div className="modalBody">{children}</div>
+                <div className="modalFooter" />
               </div>
-              <div className="modalBody">{children}</div>
-              <div className="modalFooter" />
             </div>
-          </div>
           </FormModalWrapper>
         </Portal>
       )}

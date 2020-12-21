@@ -1,66 +1,71 @@
 import React from 'react';
-import { Link, Redirect } from 'react-router-dom';
-import RegistrationModal from './RegistrationModal';
+// import { Link, Redirect } from 'react-router-dom';
 import { ButtonContainer } from '../../general/Button';
-// import { ReactComponent as FormVK } from "../../../assets/Images/forms/form_vk.svg";
-// import { ReactComponent as FormFB } from "../../../assets/Images/forms/form_fb.svg";
-// import { ReactComponent as FormG } from "../../../assets/Images/forms/form_g.svg";
-// import { ReactComponent as FormIns } from "../../../assets/Images/forms/form_ins.svg";
-// import { ReactComponent as EyeClosed } from "../../../assets/Images/forms/eye_closed.svg";
-// import { ReactComponent as EyeOpen } from "../../../assets/Images/forms/eye_open.svg";
-// import "./UserFormStyle.sass";
+import { ReactComponent as EyesClosed } from '../../../../static/appJobSeeker/mailAuth/eyes_closed.svg';
+import { ReactComponent as EyesOpened } from '../../../../static/appJobSeeker/mailAuth/eyes_opened.svg';
 
-function RegistrationForm() {
-  const [visiblePopup, setVisiblePopup] = React.useState(false);
+const validationTooltipList = [
+  'Ваш пароль должен содержать не менее 8 символов',
+  'Пароль должен содержать одну заглавную или маленькую латинскую букву',
+  'Пароль должен содержать минимум одну цифру',
+];
 
-  const closePopup = () => {
-    setVisiblePopup(false);
+type RegistrationFormProps = {
+  onClickRegister: any;
+};
+
+function RegistrationForm({ onClickRegister }: RegistrationFormProps) {
+  // const [visibleModal, setVisibleModal] = React.useState(false);
+  const [visibleEyes, setVisibleEyes] = React.useState(false);
+
+  const toggleVisibleEyes = () => {
+    setVisibleEyes(!visibleEyes);
   };
 
-  const registerUser = () => {
-    setVisiblePopup(true);
-  };
+  // const closeModal = () => {
+  //   setVisibleModal(false);
+  // };
+
+  // const registerUser = () => {
+  //   setVisibleModal(true);
+  // };
 
   return (
-    <div className="container-form">
-      <div className="formWrapper">
-        <fieldset className="formContainerItem__form">
-          <div>
-            <label>E-mail</label>
-            <input
-              // className={formErrorStyle.email}
-              name="email"
-              type="email"
-              placeholder="Введите электронную почту"
-              // value={email}
-              // onChange={this.handleInput}
-              required
-            />
-          </div>
+    <fieldset className="formContainerItem__form">
+      <div>
+        <label>E-mail</label>
+        <input
+          // className={formErrorStyle.email}
+          name="email"
+          type="email"
+          placeholder="Введите электронную почту"
+          // value={email}
+          // onChange={this.handleInput}
+          required
+        />
+      </div>
 
-          <div className="form-password">
-            <label>Пароль</label>
-            <input
-              id="password"
-              // className={formErrorStyle.password.inputStatus}
-              name="password"
-              // type={openEye ? 'text' : 'password'}
-              placeholder="Придумайте пароль"
-              // onChange={handleInput}
-              // value={password}
-              autoComplete="current-password"
-              required
-            />
-            {/* <button
-              className="btn-show_closed"
-              onClick={() => this.setState({ openEye: !openEye })}>
-              {openEye ? <EyeOpen /> : <EyeClosed />}
-            </button> */}
-          </div>
+      <div className="form-password">
+        <label>Пароль</label>
+        <input
+          id="password"
+          // className={formErrorStyle.password.inputStatus}
+          name="password"
+          type={visibleEyes ? 'text' : 'password'}
+          placeholder="Придумайте пароль"
+          // onChange={handleInput}
+          // value={password}
+          autoComplete="current-password"
+          required
+        />
+        <button className="btn-show_visible" onClick={toggleVisibleEyes}>
+          {visibleEyes ? <EyesOpened /> : <EyesClosed />}
+        </button>
+      </div>
 
-          {/* <ul className="c-validation-message">
+      {/* <ul className="c-validation-message">
             <li className={'validation-message__text ' + formErrorStyle.password.messageStatus1}>
-              Ваш пароль должен быть от 8 символов длиной
+              Ваш пароль должен содержать не менее 8 символов
             </li>
             <li className={'validation-message__text ' + formErrorStyle.password.messageStatus2}>
               Пароль должен содержать минимум одну заглавную букву
@@ -70,28 +75,36 @@ function RegistrationForm() {
             </li>
           </ul> */}
 
-          <ButtonContainer className="btn-registry" type="submit" onClick={registerUser}>
-            Зарегистрироваться
-          </ButtonContainer>
-
-          <div className="c-privacy-agreement">
-            <span>Нажимая на кнопку, Вы соглашаетесь с политикой конфиденциальности</span>
-          </div>
-        </fieldset>
-        {/* Change messages in modal window according to server response */}
-        <RegistrationModal
-          // title="registration successful"
-          modalOpened={visiblePopup}
-          onCancel={closePopup}>
-          <h1>Поздравляем!</h1>
-          <p>
-            Вы почти зарегистрированы в memory-lane!
-            <br />
-            На почту отправлено письмо для подтверждения e-mail
-          </p>
-        </RegistrationModal>
+      <div className="c-validation-message">
+        <ul>
+          <li
+            className={activeCategory === null ? 'active' : ''}
+            onClick={() => onClickCategory(null)}>
+            Все
+          </li>
+          {validationTooltipList &&
+            validationTooltipList.map((name, index) => (
+              <li
+                className={activeCategory === index ? 'active' : ''}
+                onClick={() => onClickCategory(index)}
+                key={`${name}_${index}`}>
+                {name}
+              </li>
+            ))}
+        </ul>
       </div>
-    </div>
+
+      <ButtonContainer
+        className="btn-registry"
+        type="submit"
+        onClick={() => onClickRegister(index)}>
+        Зарегистрироваться
+      </ButtonContainer>
+
+      <div className="c-privacy-agreement">
+        <span>Нажимая на кнопку, Вы соглашаетесь с политикой конфиденциальности</span>
+      </div>
+    </fieldset>
   );
 }
 
