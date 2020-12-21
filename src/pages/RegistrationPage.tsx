@@ -6,7 +6,11 @@ import RegistrationForm from '../components/appJobSeeker/authenticationUser/mail
 import SocialNetworkForm from '../components/appJobSeeker/authenticationUser/socialNetworksAuth';
 
 function RegistrationPage() {
-  
+  // const { visibleModal } 
+  const visibleModal = false; 
+
+  const closeModal = () => false;
+  const registerUser = () => false;
 
   return (
     <div className="container-form">
@@ -16,7 +20,7 @@ function RegistrationPage() {
         </div>
         <SocialNetworkForm />
         <div className="form-or">Или E-mail</div>
-        <RegistrationForm onClickRegister={} />
+        <RegistrationForm onClickRegister={registerUser} />
         <div className="c-registration__link">
           <Link className="registration__link" to="/auth">
             Войти в систему

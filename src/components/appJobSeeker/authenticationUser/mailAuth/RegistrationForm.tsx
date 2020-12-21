@@ -17,10 +17,32 @@ type RegistrationFormProps = {
 function RegistrationForm({ onClickRegister }: RegistrationFormProps) {
   // const [visibleModal, setVisibleModal] = React.useState(false);
   const [visibleEyes, setVisibleEyes] = React.useState(false);
+  const [getFirstName, setFirstName] = React.useState('');
+  const [getEmail, setEmail] = React.useState('');
+  const [getPassword, setPassword] = React.useState('');
 
   const toggleVisibleEyes = () => {
     setVisibleEyes(!visibleEyes);
   };
+
+  const handleInput = (e: any) => {
+    const { name, value } = e.target;
+    switch (name) {
+      case 'first-name':
+        setFirstName(value);
+        break;
+      case 'email':
+        setEmail(value);
+        break;
+      case 'password':
+        setPassword(value);
+        break;
+      default:
+        break;
+    }
+  };
+
+  // console.log(getFirstName, getEmail, getPassword);
 
   // const closeModal = () => {
   //   setVisibleModal(false);
@@ -33,14 +55,26 @@ function RegistrationForm({ onClickRegister }: RegistrationFormProps) {
   return (
     <fieldset className="formContainerItem__form">
       <div>
+        <label>Имя</label>
+        <input
+          // className={formErrorStyle.email}
+          name="first-name"
+          type="text"
+          placeholder="Введите ваше имя"
+          value={getFirstName}
+          onChange={handleInput}
+          required
+        />
+      </div>
+      <div>
         <label>E-mail</label>
         <input
           // className={formErrorStyle.email}
           name="email"
           type="email"
           placeholder="Введите электронную почту"
-          // value={email}
-          // onChange={this.handleInput}
+          value={getEmail}
+          onChange={handleInput}
           required
         />
       </div>
@@ -53,8 +87,8 @@ function RegistrationForm({ onClickRegister }: RegistrationFormProps) {
           name="password"
           type={visibleEyes ? 'text' : 'password'}
           placeholder="Придумайте пароль"
-          // onChange={handleInput}
-          // value={password}
+          onChange={handleInput}
+          value={getPassword}
           autoComplete="current-password"
           required
         />
@@ -75,7 +109,7 @@ function RegistrationForm({ onClickRegister }: RegistrationFormProps) {
             </li>
           </ul> */}
 
-      <div className="c-validation-message">
+      {/* <div className="c-validation-message">
         <ul>
           <li
             className={activeCategory === null ? 'active' : ''}
@@ -92,12 +126,9 @@ function RegistrationForm({ onClickRegister }: RegistrationFormProps) {
               </li>
             ))}
         </ul>
-      </div>
+      </div> */}
 
-      <ButtonContainer
-        className="btn-registry"
-        type="submit"
-        onClick={() => onClickRegister(index)}>
+      <ButtonContainer className="btn-registry" type="submit" onClick={() => onClickRegister}>
         Зарегистрироваться
       </ButtonContainer>
 
