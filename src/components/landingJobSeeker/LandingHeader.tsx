@@ -28,7 +28,7 @@ function LandingHeader() {
             оплатой за приглашения. Вам останется лишь ходить на интервью.
           </span>
           <fieldset className="landingContainer__form">
-            <div className="landingItem-wrapper">
+            {/* <div className="landingItem-wrapper">
               <input
                 className="landingItem__form"
                 name="vocation"
@@ -43,7 +43,7 @@ function LandingHeader() {
                 placeholder="Ссылка на резюме"
                 required
               />
-            </div>
+            </div> */}
             <button className="createTask-btn btn--yellow" onClick={toForm}>
               Создать задание
             </button>
