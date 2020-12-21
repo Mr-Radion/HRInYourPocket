@@ -1,5 +1,5 @@
 import React from 'react';
-import TaskList from '../components/appJobSeeker/ddwd/TaskList';
+import TaskList from '../components/appJobSeeker/tasks/TaskList';
 
 function MyTasks() {
   return (
