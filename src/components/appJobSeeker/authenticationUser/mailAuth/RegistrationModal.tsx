@@ -1,5 +1,5 @@
 import React from 'react';
-import Portal from '../../general/Portal';
+import Portal from '../../../../utils/Portal';
 import styled from 'styled-components';
 
 type ModalProps = {

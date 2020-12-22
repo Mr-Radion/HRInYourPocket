@@ -17,7 +17,6 @@ function socialNetworksForm() {
           <FormFB />
         </a>
       </div>
-      <div className="formContainerItem__message">Присоединиться через соц. сети</div>
     </div>
   );
 }
