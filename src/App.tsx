@@ -1,5 +1,5 @@
 import React from 'react';
-import LandingJobSeeker from './pages/landingJobSeeker';
+// import LandingJobSeeker from './pages/landingJobSeeker';
 import Routes from "./pages/Routes";
 
 import './App.css';

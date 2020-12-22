@@ -1,5 +1,4 @@
 import { useEffect, useMemo } from 'react';
-// import {} from './styles';
 import { createPortal } from 'react-dom';
 
 const Portal:React.FC = ({ children }) => {
