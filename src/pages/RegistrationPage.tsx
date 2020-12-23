@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import RegistrationModal from '../components/appJobSeeker/authenticationUser/mailAuth/RegistrationModal';
 
+import RegistrationModal from '../components/appJobSeeker/authenticationUser/mailAuth/RegistrationModal';
 import RegistrationForm from '../components/appJobSeeker/authenticationUser/mailAuth/RegistrationForm';
 import SocialNetworkForm from '../components/appJobSeeker/authenticationUser/socialNetworksAuth';
 
@@ -12,8 +12,7 @@ function RegistrationPage() {
     setVisibleModal(false);
   };
   
-  const registerUser = (e: React.SyntheticEvent) => {
-    e.preventDefault();
+  const registerUser = () => {
     setVisibleModal(true);
   };
 
@@ -23,13 +22,14 @@ function RegistrationPage() {
         <div className="formWrapperItem__titleContainer">
           <h2 className="titleContainerItem__title">Регистрация</h2>
         </div>
-        <div className="formContainerItem__message">Присоединиться через соц. сети</div>
+        <div className="formContainerItem__message">Через соцсети</div>
         <SocialNetworkForm />
         <div className="form-or">Или E-mail</div>
         <RegistrationForm onClickRegister={registerUser} />
         <div className="c-registration__link">
+          <span>У вас уже есть аккаунт?</span>  
           <Link className="registration__link" to="/auth">
-            Войти в систему
+            Войти
           </Link>
         </div>
         {/* Change messages in modal window according to server response */}

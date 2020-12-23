@@ -19,7 +19,7 @@ function LandingNav() {
           </button>
         </li>
         <li>
-          <Link to="/home">
+          <Link to="/register">
             <button className="login-btn">Войти</button>
           </Link>
         </li>

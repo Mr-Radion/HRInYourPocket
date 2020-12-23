@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
-import { LandingJobSeeker, Home, PageNotFound, MyTasks, TaskCreation, RegistrationForm } from './index';
+import { LandingJobSeeker, Home, PageNotFound, MyTasks, TaskCreation, RegistrationForm, Authorization } from './';
 
 export default function Routes() {
   return (
@@ -9,6 +9,7 @@ export default function Routes() {
       <Switch>
         <Route exact path="/" component={LandingJobSeeker} />
         <Route exact path="/home" component={Home} />
+        <Route exact path="/auth" component={Authorization} />
         <Route exact path="/register" component={RegistrationForm} />
         <Route exact path="/task-creation" component={TaskCreation} />
         <Route exact path="/my-tasks" component={MyTasks} />

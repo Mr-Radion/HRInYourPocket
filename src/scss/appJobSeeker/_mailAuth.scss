@@ -1,0 +1,171 @@
+.container-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.formWrapperItem__titleContainer {
+  margin-top: 44px;
+  margin-bottom: 60px;
+}
+
+.formWrapper {
+  width: 600px;
+}
+
+.form-password {
+  position: relative;
+}
+
+.wrapper-form__input {
+  height: 52px;
+  margin-top: 36px;
+}
+
+.validation-message {
+  color: #dd513e;
+  height: 18px;
+  padding-top: 12px;
+}
+
+.input--basic {
+  height: 34px;
+  font-size: 20px;
+  color: #212429;
+  border: none;
+  border-bottom: 1px solid #c4c4c4;
+  background-color: transparent;
+  &:active {
+    border: none;
+    border-bottom: 1px solid #000;
+    outline: none;
+  }
+  &:focus {
+    border: none;
+    border-bottom: 1px solid #000;
+    outline: none;
+  }
+  &::placeholder {
+    margin-bottom: 9px;
+    font-size: 20px !important;
+  }
+}
+
+.formContainerItem__form {
+  > div {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    > label {
+      font-size: 18px;
+      color: #bfc6c8;
+      padding-left: 2px;
+    }
+  }
+}
+
+// .encrypted--characters {
+//   font-size: 26px!important;
+// }
+
+.checkBox__basic {
+  margin-top: 32px;
+  > label {
+    color: #000 !important;
+  }
+}
+
+.checkBox__basic {
+  flex-direction: row !important;
+}
+
+.container-btn {
+  display: flex;
+  margin-top: 61px;
+  > button {
+    flex-basis: 100%;
+  }
+}
+
+.c-registration__link {
+  display: flex;
+  justify-content: center;
+}
+
+.container__icons {
+  display: flex;
+  justify-content: space-between;
+  width: 236px;
+}
+
+.c-registration__link {
+  margin-top: 134px;
+}
+
+.formContainerItem__message,
+.form-or {
+  text-align: center;
+}
+
+.formContainerItem__icons,
+.form-or {
+  margin-top: 28px;
+}
+
+.formContainerItem__icons {
+  display: flex;
+  justify-content: center;
+}
+
+.registration__link {
+  margin-left: 18px;
+}
+
+// .container-input {
+//   padding-right: 0px;
+//   width: 760px;
+//   margin-top: 25px;
+//   text-align: center;
+// }
+
+// .container-input {
+//   > input {
+//     font-family: 'Montserrat';
+//     font-style: normal;
+//     font-weight: 500;
+//     font-size: 20px;
+//     line-height: 24px;
+//     letter-spacing: 0.04em;
+//     color: #212429;
+//     text-align: left;
+//     opacity: 0.4;
+//   }
+// }
+
+// .input-application {
+//   width: 599px;
+//   background-color: #ccc;
+//   border: none;
+//   border-bottom: 1px solid #000;
+//   margin: 0 auto;
+//   background-color: transparent;
+// }
+
+.button-eye {
+  position: absolute;
+  right: 4px;
+  bottom: 9px;
+  border: none;
+  background-color: transparent;
+  svg {
+    vertical-align: baseline;
+  }
+  &:active {
+    border: none;
+    outline: none;
+  }
+  &:focus {
+    border: none;
+    outline: none;
+  }
+}
