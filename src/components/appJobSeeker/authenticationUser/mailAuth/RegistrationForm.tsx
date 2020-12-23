@@ -27,16 +27,18 @@ function RegistrationForm({ onClickRegister }: RegistrationFormProps) {
   const [getEmail, setEmail] = React.useState<string>('');
   const [getPassword, setPassword] = React.useState<string>('');
   const [getPasswordErrors, setPasswordErrors] = React.useState<string>('');
+  const [getPasswordErrorStyle, setPasswordErrorStyle] = React.useState<string>('');
   const [getEmailErrors, setEmailErrors] = React.useState<string>('');
+  const [getEmailErrorStyles, setEmailErrorStyles] = React.useState<string>('');
   const [getPasswordValid, setPasswordValid] = React.useState<boolean>(false);
   const [getEmailValid, setEmailValid] = React.useState<boolean>(false);
   const [getFormlValid, setFormlValid] = React.useState<boolean>(false);
-  const [getConfidentiality, setConfidentiality] = React.useState<boolean>(false);
+  const [getConfidentiality, setConfidentiality] = React.useState<boolean>(true);
 
   React.useEffect(() => {
-    const formValid: boolean = getEmailValid && getPasswordValid;
+    const formValid: boolean = getEmailValid && getPasswordValid && getConfidentiality;
     setFormlValid(formValid);
-  }, [getEmail, getPassword]);
+  }, [getEmail, getPassword, getConfidentiality]);
 
   const toggleVisibleEyes = () => {
     setVisibleEyes(!visibleEyes);
@@ -78,6 +80,7 @@ function RegistrationForm({ onClickRegister }: RegistrationFormProps) {
         switch (true) {
           case required(value) === undefined:
             setPasswordErrors(validationTooltipList[0]);
+            setPasswordErrorStyle('');
             break;
           case isLettersBigOrSmall(value) === undefined:
             setPasswordErrors(validationTooltipList[1]);
@@ -101,10 +104,10 @@ function RegistrationForm({ onClickRegister }: RegistrationFormProps) {
 
   return (
     <fieldset className="formContainerItem__form">
-      <div>
+      <div className="wrapper-form__input">
         <label>Имя</label>
         <input
-          // className={formErrorStyle.email}
+          className={classNames('input--basic')}
           name="first-name"
           type="text"
           placeholder="Введите ваше имя"
@@ -113,10 +116,10 @@ function RegistrationForm({ onClickRegister }: RegistrationFormProps) {
           required
         />
       </div>
-      <div>
+      <div className="wrapper-form__input">
         <label>E-mail</label>
         <input
-          // className={formErrorStyle.email}
+          className={classNames('input--basic', getEmailErrorStyles)}
           name="email"
           type="email"
           placeholder="Введите электронную почту"
@@ -126,11 +129,13 @@ function RegistrationForm({ onClickRegister }: RegistrationFormProps) {
         />
       </div>
 
-      <div className="form-password">
+      <div className="wrapper-form__input form-password">
         <label>Пароль</label>
         <input
           id="password"
-          // className={passwordErrorStyle}
+          className={classNames('input--basic', getPasswordErrorStyle, {
+            'encrypted--characters': !visibleEyes,
+          })}
           name="password"
           type={visibleEyes ? 'text' : 'password'}
           placeholder="Придумайте пароль"
@@ -139,14 +144,15 @@ function RegistrationForm({ onClickRegister }: RegistrationFormProps) {
           autoComplete="current-password"
           required
         />
-        <button className="btn-show_visible" onClick={toggleVisibleEyes}>
+        <button className="button-eye btn-show_visible" onClick={toggleVisibleEyes}>
           {visibleEyes ? <EyesOpened /> : <EyesClosed />}
         </button>
       </div>
       <div className="validation-message">{getPasswordErrors}</div>
-      <div className={classNames('checkBox__basic', {
-        'checkBox--outline': getFormlValid,
-      })}>
+      <div
+        className={classNames('checkBox__basic', {
+          'checkBox--outline': getFormlValid,
+        })}>
         <input
           type="checkbox"
           id="privacy-policy"
@@ -158,14 +164,16 @@ function RegistrationForm({ onClickRegister }: RegistrationFormProps) {
           <span>Я согласен с условиями обработки персональных данных</span>
         </label>
       </div>
-      <ButtonContainer
-        className="btn-registry"
-        type="submit"
-        onClick={(e: any) =>
-          getFormlValid ? onClickRegister(getEmail, getPassword) : e.preventDefault()
-        }>
-        Зарегистрироваться
-      </ButtonContainer>
+      <div className="container-btn">
+        <ButtonContainer
+          className="btn-registry"
+          type="submit"
+          onClick={(e: any) =>
+            getFormlValid ? onClickRegister(getEmail, getPassword) : e.preventDefault()
+          }>
+          Зарегистрироваться
+        </ButtonContainer>
+      </div>
 
       {/* <div className="c-privacy-agreement">
         <span>Нажимая на кнопку, Вы соглашаетесь с политикой конфиденциальности</span>

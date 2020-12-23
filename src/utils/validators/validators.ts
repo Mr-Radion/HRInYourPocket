@@ -17,7 +17,7 @@ export const minLength8 = (value: any) => {
 }
 
 export const isLettersBigOrSmall = (value: any) => {
-  return value && value.match(/(?=.*?[A-Z])/) ? 'Field is valid' : undefined;
+  return value && value.match(/(?=.*?[A-Za-z])/) ? 'Field is valid' : undefined;
 }
 
 export const oneDigit = (value: any) => {
