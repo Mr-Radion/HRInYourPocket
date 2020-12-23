@@ -174,10 +174,6 @@ function RegistrationForm({ onClickRegister }: RegistrationFormProps) {
           Зарегистрироваться
         </ButtonContainer>
       </div>
-
-      {/* <div className="c-privacy-agreement">
-        <span>Нажимая на кнопку, Вы соглашаетесь с политикой конфиденциальности</span>
-      </div> */}
     </fieldset>
   );
 }
