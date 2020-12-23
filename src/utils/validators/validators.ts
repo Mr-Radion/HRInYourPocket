@@ -1,5 +1,13 @@
 import React from 'react'
 
+export const validationTooltipList: any = [
+  'Поле не должно быть пустым',
+  'Пароль должен содержать одну заглавную или маленькую латинскую букву',
+  'Пароль должен содержать минимум одну цифру',
+  'Ваш пароль должен содержать не менее 8 символов',
+  'Неверно введен e-mail',
+];
+
 export const required = (value: any) => {
   return value ? 'Field is valid' : undefined;
 }

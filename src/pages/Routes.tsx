@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
-import { LandingJobSeeker, Home, PageNotFound, MyTasks, TaskCreation, RegistrationForm } from './index';
+import { LandingJobSeeker, Home, PageNotFound, MyTasks, TaskCreation, RegistrationForm } from './';
 
 export default function Routes() {
   return (

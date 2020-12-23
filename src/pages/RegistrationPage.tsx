@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import RegistrationModal from '../components/appJobSeeker/authenticationUser/mailAuth/RegistrationModal';
 
+import RegistrationModal from '../components/appJobSeeker/authenticationUser/mailAuth/RegistrationModal';
 import RegistrationForm from '../components/appJobSeeker/authenticationUser/mailAuth/RegistrationForm';
 import SocialNetworkForm from '../components/appJobSeeker/authenticationUser/socialNetworksAuth';
 
@@ -12,8 +12,7 @@ function RegistrationPage() {
     setVisibleModal(false);
   };
   
-  const registerUser = (e: React.SyntheticEvent) => {
-    e.preventDefault();
+  const registerUser = () => {
     setVisibleModal(true);
   };
 
