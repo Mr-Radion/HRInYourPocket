@@ -2,12 +2,14 @@ import React from 'react';
 import classNames from 'classnames';
 // import { Link, Redirect } from 'react-router-dom';
 
-import { required } from '../../../../utils/validators/validators';
-import { isLettersBigOrSmall } from '../../../../utils/validators/validators';
-import { minLength8 } from '../../../../utils/validators/validators';
-import { oneDigit } from '../../../../utils/validators/validators';
-import { checkinEmail } from '../../../../utils/validators/validators';
-import { validationTooltipList } from '../../../../utils/validators/validators';
+import {
+  required,
+  isLettersBigOrSmall,
+  minLength8,
+  oneDigit,
+  checkinEmail,
+  validationTooltipList,
+} from '../../../../utils/validators/validators';
 import { ButtonContainer } from '../../ui/Button';
 import { ReactComponent as EyesClosed } from '../../../../static/appJobSeeker/mailAuth/eyes_closed.svg';
 import { ReactComponent as EyesOpened } from '../../../../static/appJobSeeker/mailAuth/eyes_opened.svg';
@@ -28,17 +30,18 @@ function RegistrationForm({ onClickRegister }: RegistrationFormProps) {
   const [getPassword, setPassword] = React.useState<string>('');
   const [getPasswordErrors, setPasswordErrors] = React.useState<string>('');
   const [getPasswordErrorStyle, setPasswordErrorStyle] = React.useState<string>('');
-  const [getEmailErrors, setEmailErrors] = React.useState<string>('');
+  // const [getEmailErrors, setEmailErrors] = React.useState<string>('');
   const [getEmailErrorStyles, setEmailErrorStyles] = React.useState<string>('');
   const [getPasswordValid, setPasswordValid] = React.useState<boolean>(false);
   const [getEmailValid, setEmailValid] = React.useState<boolean>(false);
   const [getFormlValid, setFormlValid] = React.useState<boolean>(false);
   const [getConfidentiality, setConfidentiality] = React.useState<boolean>(true);
+  const [getShowTips, setShowTips] = React.useState<boolean>(false);
 
   React.useEffect(() => {
     const formValid: boolean = getEmailValid && getPasswordValid && getConfidentiality;
     setFormlValid(formValid);
-  }, [getEmail, getPassword, getConfidentiality]);
+  }, [getEmail, getPassword, getConfidentiality, getEmailValid, getPasswordValid]);
 
   const toggleVisibleEyes = () => {
     setVisibleEyes(!visibleEyes);
@@ -63,7 +66,8 @@ function RegistrationForm({ onClickRegister }: RegistrationFormProps) {
   };
 
   const confidentialityChange = (e: any) => {
-    setConfidentiality(e.target.checked);
+    // setConfidentiality(!e.target.checked);
+    setConfidentiality(!getConfidentiality);
   };
 
   const inputValidateField = (fieldName: any, value: any) => {
@@ -73,27 +77,37 @@ function RegistrationForm({ onClickRegister }: RegistrationFormProps) {
       case 'email':
         let email = checkinEmail(value) === 'Field is valid';
         // email ? setEmailErrors('') : setEmailErrors(validationTooltipList[4]);
+        email ? setEmailErrorStyles('') : setEmailErrorStyles('border--error');
         email ? setEmailValid(true) : setEmailValid(false);
         break;
       case 'password':
         setPasswordValid(false);
         switch (true) {
           case required(value) === undefined:
+            setShowTips(false);
             setPasswordErrors(validationTooltipList[0]);
-            setPasswordErrorStyle('');
+            setPasswordErrorStyle('border--error');
             break;
           case isLettersBigOrSmall(value) === undefined:
+            setShowTips(false);
             setPasswordErrors(validationTooltipList[1]);
+            setPasswordErrorStyle('border--error');
             break;
           case oneDigit(value) === undefined:
+            setShowTips(false);
             setPasswordErrors(validationTooltipList[2]);
+            setPasswordErrorStyle('border--error');
             break;
           case minLength8(value) === undefined:
+            setShowTips(false);
             setPasswordErrors(validationTooltipList[3]);
+            setPasswordErrorStyle('border--error');
             break;
           default:
+            setShowTips(false);
             setPasswordErrors('');
             setPasswordValid(true);
+            setPasswordErrorStyle('');
             break;
         }
         break;
@@ -107,7 +121,7 @@ function RegistrationForm({ onClickRegister }: RegistrationFormProps) {
       <div className="wrapper-form__input">
         <label>Имя</label>
         <input
-          className={classNames('input--basic')}
+          className="input--basic"
           name="first-name"
           type="text"
           placeholder="Введите ваше имя"
@@ -119,7 +133,9 @@ function RegistrationForm({ onClickRegister }: RegistrationFormProps) {
       <div className="wrapper-form__input">
         <label>E-mail</label>
         <input
-          className={classNames('input--basic', getEmailErrorStyles)}
+          className={classNames('input--basic', {
+            'border--error': getEmailErrorStyles || (getShowTips && getEmailValid === false),
+          })}
           name="email"
           type="email"
           placeholder="Введите электронную почту"
@@ -128,13 +144,16 @@ function RegistrationForm({ onClickRegister }: RegistrationFormProps) {
           required
         />
       </div>
-
+      <div className="validation-message" style={{ position: 'absolute' }}>
+        {!getEmail && getShowTips ? 'Заполните это поле' : ''}
+      </div>
       <div className="wrapper-form__input form-password">
         <label>Пароль</label>
         <input
           id="password"
-          className={classNames('input--basic', getPasswordErrorStyle, {
+          className={classNames('input--basic', {
             'encrypted--characters': !visibleEyes,
+            'border--error': getPasswordErrorStyle || (getShowTips && getPasswordValid === false),
           })}
           name="password"
           type={visibleEyes ? 'text' : 'password'}
@@ -148,7 +167,9 @@ function RegistrationForm({ onClickRegister }: RegistrationFormProps) {
           {visibleEyes ? <EyesOpened /> : <EyesClosed />}
         </button>
       </div>
-      <div className="validation-message">{getPasswordErrors}</div>
+      <div className="validation-message">
+        {!getPassword && getShowTips ? 'Заполните это поле' : getPasswordErrors}
+      </div>
       <div
         className={classNames('checkBox__basic', {
           'checkBox--outline': getFormlValid,
@@ -157,8 +178,10 @@ function RegistrationForm({ onClickRegister }: RegistrationFormProps) {
           type="checkbox"
           id="privacy-policy"
           name="privacy-policy"
+          // defaultChecked={true}
           checked={getConfidentiality}
-          onClick={confidentialityChange}
+          onChange={confidentialityChange}
+          // onClick={confidentialityChange}
         />
         <label htmlFor="privacy-policy">
           <span>Я согласен с условиями обработки персональных данных</span>
@@ -168,8 +191,8 @@ function RegistrationForm({ onClickRegister }: RegistrationFormProps) {
         <ButtonContainer
           className="btn-registry"
           type="submit"
-          onClick={(e: any) =>
-            getFormlValid ? onClickRegister(getEmail, getPassword) : e.preventDefault()
+          onClick={() =>
+            getFormlValid ? onClickRegister(getEmail, getPassword) : setShowTips(true)
           }>
           Зарегистрироваться
         </ButtonContainer>

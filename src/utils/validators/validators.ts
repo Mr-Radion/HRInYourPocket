@@ -1,10 +1,8 @@
-import React from 'react'
-
 export const validationTooltipList: any = [
   'Поле не должно быть пустым',
   'Пароль должен содержать одну заглавную или маленькую латинскую букву',
   'Пароль должен содержать минимум одну цифру',
-  'Ваш пароль должен содержать не менее 8 символов',
+  'Ваш пароль должен содержать не менее 6 символов',
   'Неверно введен e-mail',
 ];
 
@@ -13,7 +11,7 @@ export const required = (value: any) => {
 }
 
 export const minLength8 = (value: any) => {
-  return value && value.length >=8 ? 'Field is valid' : undefined;
+  return value && value.length >=6 ? 'Field is valid' : undefined;
 }
 
 export const isLettersBigOrSmall = (value: any) => {
