@@ -1,10 +1,10 @@
 // import React from 'react';
 // import axios from 'axios';
 
-export function fetchRegistrationApi() {
+export function fetchUserRegistrationMailApi() {
   return;
 }
 
-export function fetchAuthorizationApi() {
+export function fetchUserAuthorizationMailApi() {
   return;
 }
