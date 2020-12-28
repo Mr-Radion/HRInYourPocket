@@ -1,10 +1,10 @@
 // import React from 'react';
 // import axios from 'axios';
 
-export function fetchUserRegistrationMailApi() {
+export const fetchRegistration = () => {
   return;
 }
 
-export function fetchUserAuthorizationMailApi() {
+export const fetchLogin = () => {
   return;
 }

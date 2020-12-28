@@ -1,9 +1,11 @@
 import { combineReducers } from 'redux';
 
-import authorizationMailReducer from './authorizationMail';
+import currentUserReducer from './currentUser';
+// import tasksReducer from './tasks';
 
 const rootReducer = combineReducers({
-  authorizationMail: authorizationMailReducer,
+  user: currentUserReducer,
+  // tasks: tasksReducer
 });
 
 export default rootReducer;
