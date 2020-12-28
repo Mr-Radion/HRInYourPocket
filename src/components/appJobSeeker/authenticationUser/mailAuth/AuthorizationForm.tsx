@@ -77,7 +77,7 @@ function AuthorizationForm({ onClickAuth }: AuthorizationFormProps) {
           className="btn-registry"
           type="submit"
           onClick={() => onClickAuth(getEmail, getPassword)}>
-          Зарегистрироваться
+          Войти
         </ButtonContainer>
       </div>
     </fieldset>

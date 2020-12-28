@@ -1,6 +1,5 @@
 import React from 'react';
 import classNames from 'classnames';
-// import { Link, Redirect } from 'react-router-dom';
 
 import {
   required,
@@ -192,7 +191,7 @@ function RegistrationForm({ onClickRegister }: RegistrationFormProps) {
           className="btn-registry"
           type="submit"
           onClick={() =>
-            getFormlValid ? onClickRegister(getEmail, getPassword) : setShowTips(true)
+            getFormlValid ? onClickRegister(getFirstName, getEmail, getPassword) : setShowTips(true)
           }>
           Зарегистрироваться
         </ButtonContainer>

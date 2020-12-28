@@ -1,10 +1,10 @@
 // import React from 'react';
 // import axios from 'axios';
 
-export function fetchRegistrationApi() {
+export const fetchRegistration = () => {
   return;
 }
 
-export function fetchAuthorizationApi() {
+export const fetchLogin = () => {
   return;
 }

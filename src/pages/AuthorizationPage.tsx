@@ -1,10 +1,23 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+
+import { login } from '../redux/actions/currentUser';
 import AuthorizationForm from '../components/appJobSeeker/authenticationUser/mailAuth/AuthorizationForm';
 import SocialNetworkForm from '../components/appJobSeeker/authenticationUser/socialNetworksAuth';
 
-function AuthorizationPage() {
-  const authUser = () => {};
+function AuthorizationPage({ history }: any) {
+  const dispatch = useDispatch();
+  // const [hasLoggedIn, seLoggedIn] = React.useState<boolean>(false);
+  const isAuth = useSelector(({ user }: any) => user.isAuth);
+  console.log(isAuth);
+  const authUser = (email: string, password: string) => {
+    let data = { email, password };
+    dispatch(login(data));
+    if (isAuth) {
+      history.push('/home');
+    }
+  };
 
   return (
     <div className="container-form">

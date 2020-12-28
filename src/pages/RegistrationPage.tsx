@@ -1,21 +1,37 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
+import { registration } from '../redux/actions/currentUser';
 import RegistrationModal from '../components/appJobSeeker/authenticationUser/mailAuth/RegistrationModal';
 import RegistrationForm from '../components/appJobSeeker/authenticationUser/mailAuth/RegistrationForm';
 import SocialNetworkForm from '../components/appJobSeeker/authenticationUser/socialNetworksAuth';
 
-function RegistrationPage() {
+function RegistrationPage({ history }: any) {
+  const dispatch = useDispatch();
   const [visibleModal, setVisibleModal] = React.useState(false);
+  const [hasRegistred, seRegistred] = React.useState<boolean>(false);
+
+  // React.useEffect(() => {
+  //   dispatch(auth(email, password));
+  // }, []);
 
   const closeModal = () => {
     setVisibleModal(false);
+    seRegistred(true);
+    if (hasRegistred) {
+      history.push('/auth');
+    }
   };
-  
-  const registerUser = () => {
+
+  const registerUser = (firstName: string, email: string, password: string) => {
+    let data = { firstName, email, password };
+    // console.log(data);
+    dispatch(registration(data));
     setVisibleModal(true);
   };
 
+  // if (hasRegistred) return <Redirect from="/register" to="/auth" />;
   return (
     <div className="container-form">
       <div className="formWrapper">
@@ -27,7 +43,7 @@ function RegistrationPage() {
         <div className="form-or">Или E-mail</div>
         <RegistrationForm onClickRegister={registerUser} />
         <div className="c-registration__link">
-          <span>У вас уже есть аккаунт?</span>  
+          <span>У вас уже есть аккаунт?</span>
           <Link className="registration__link" to="/auth">
             Войти
           </Link>
