@@ -10,7 +10,7 @@ function AuthorizationPage({ history }: any) {
   const dispatch = useDispatch();
   // const [hasLoggedIn, seLoggedIn] = React.useState<boolean>(false);
   const isAuth = useSelector(({ user }: any) => user.isAuth);
-  console.log(isAuth);
+  // console.log(isAuth);
   const authUser = (email: string, password: string) => {
     let data = { email, password };
     dispatch(login(data));
