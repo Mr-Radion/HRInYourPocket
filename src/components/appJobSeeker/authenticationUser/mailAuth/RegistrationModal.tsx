@@ -2,11 +2,7 @@ import React from 'react';
 import Portal from '../../../../utils/Portal';
 import styled from 'styled-components';
 
-type ModalProps = {
-  modalOpened: boolean;
-  children: any;
-  onCancel: any;
-};
+import { ModalProps } from '../../../../types';
 
 const RegistrationModal = ({ modalOpened, onCancel, children }: ModalProps) => {
   return (

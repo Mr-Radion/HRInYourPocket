@@ -4,17 +4,9 @@ import classNames from 'classnames';
 import { ButtonContainer } from '../../ui/Button';
 import { ReactComponent as EyesClosed } from '../../../../static/appJobSeeker/mailAuth/eyes_closed.svg';
 import { ReactComponent as EyesOpened } from '../../../../static/appJobSeeker/mailAuth/eyes_opened.svg';
+import { AuthProps, AuthState } from '../../../../types';
 
-type AuthorizationFormProps = {
-  onClickAuth: any;
-};
-
-type AuthorizationFormState = {
-  value: string;
-  name: string;
-};
-
-function AuthorizationForm({ onClickAuth }: AuthorizationFormProps) {
+function AuthorizationForm({ onClickAuth }: AuthProps) {
   const [visibleEyes, setVisibleEyes] = React.useState<boolean>(false);
   const [getEmail, setEmail] = React.useState<string>('');
   const [getPassword, setPassword] = React.useState<string>('');
@@ -24,7 +16,7 @@ function AuthorizationForm({ onClickAuth }: AuthorizationFormProps) {
   };
 
   const handleInput = (e: any) => {
-    const { name, value }: AuthorizationFormState = e.target;
+    const { name, value }: AuthState = e.target;
     switch (name) {
       case 'email':
         setEmail(value);

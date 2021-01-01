@@ -12,17 +12,9 @@ import {
 import { ButtonContainer } from '../../ui/Button';
 import { ReactComponent as EyesClosed } from '../../../../static/appJobSeeker/mailAuth/eyes_closed.svg';
 import { ReactComponent as EyesOpened } from '../../../../static/appJobSeeker/mailAuth/eyes_opened.svg';
+import { AuthProps, AuthState } from '../../../../types';
 
-type RegistrationFormProps = {
-  onClickRegister: any;
-};
-
-type RegistrationFormState = {
-  value: string;
-  name: string;
-};
-
-function RegistrationForm({ onClickRegister }: RegistrationFormProps) {
+function RegistrationForm({ onClickAuth }: AuthProps) {
   const [visibleEyes, setVisibleEyes] = React.useState<boolean>(false);
   const [getFirstName, setFirstName] = React.useState<string>('');
   const [getEmail, setEmail] = React.useState<string>('');
@@ -47,7 +39,7 @@ function RegistrationForm({ onClickRegister }: RegistrationFormProps) {
   };
 
   const handleInput = (e: any) => {
-    const { name, value }: RegistrationFormState = e.target;
+    const { name, value }: AuthState = e.target;
     switch (name) {
       case 'first-name':
         setFirstName(value);
@@ -64,13 +56,12 @@ function RegistrationForm({ onClickRegister }: RegistrationFormProps) {
     inputValidateField(name, value);
   };
 
-  const confidentialityChange = (e: any) => {
-    // setConfidentiality(!e.target.checked);
+  const confidentialityChange = () => {
     setConfidentiality(!getConfidentiality);
   };
 
-  const inputValidateField = (fieldName: any, value: any) => {
-    switch (fieldName) {
+  const inputValidateField = (name: string, value: string) => {
+    switch (name) {
       case 'first-name':
         break;
       case 'email':
@@ -191,7 +182,7 @@ function RegistrationForm({ onClickRegister }: RegistrationFormProps) {
           className="btn-registry"
           type="submit"
           onClick={() =>
-            getFormlValid ? onClickRegister(getFirstName, getEmail, getPassword) : setShowTips(true)
+            getFormlValid ? onClickAuth(getEmail, getPassword, getFirstName) : setShowTips(true)
           }>
           Зарегистрироваться
         </ButtonContainer>

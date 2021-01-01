@@ -1,23 +1,15 @@
-// import { fetchRegistration, fetchLogin } from "../../api";
 import axios from 'axios';
+
 import { setUser } from '../reducers/currentUser';
+// import { RegistrationApi, LoginApi } from '../../utils/api';
+import { IauthProps } from '../../types';
 
-interface IauthProps {
-  firstName?: string;
-  email: string;
-  password: string;
-}
-
-export const registration = ({ firstName, email, password }: IauthProps) => {
+export const registration = ({ email, password, firstName }: IauthProps) => {
   return async () => {
-    console.log(firstName, email, password);
+    console.log(email, password, firstName);
     try {
-      const response = await axios.post(`http://localhost:5000/api/auth/registration`, {
-        firstName,
-        email,
-        password,
-      });
-      alert(response.data.result);
+      // const response = await RegistrationApi.post(email, password, firstName).then({ data });
+      // alert(response.data.result);
     } catch (e) {
       // alert(e.response.data.message);
       alert(e.message);
@@ -57,3 +49,4 @@ export const auth = () => {
   };
 };
 
+// export type ActionsTypes = InferActionsTypes<typeof actions>;

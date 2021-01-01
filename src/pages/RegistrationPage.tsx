@@ -24,8 +24,8 @@ function RegistrationPage({ history }: any) {
     }
   };
 
-  const registerUser = (firstName: string, email: string, password: string) => {
-    let data = { firstName, email, password };
+  const registerUser = (email: string, password: string, firstName?: string) => {
+    let data = { email, password, firstName };
     // console.log(data);
     dispatch(registration(data));
     setVisibleModal(true);
@@ -41,7 +41,7 @@ function RegistrationPage({ history }: any) {
         <div className="formContainerItem__message">Через соцсети</div>
         <SocialNetworkForm />
         <div className="form-or">Или E-mail</div>
-        <RegistrationForm onClickRegister={registerUser} />
+        <RegistrationForm onClickAuth={registerUser} />
         <div className="c-registration__link">
           <span>У вас уже есть аккаунт?</span>
           <Link className="registration__link" to="/auth">
